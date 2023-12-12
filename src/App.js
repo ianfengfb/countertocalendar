@@ -3,7 +3,7 @@
 // import Header from './components/Header';
 // import Auth from './components/Auth'
 import { LandingPage } from './landing/LandingPage';
-import { CalendarPage, loader as calendarsLoader } from './calendar/CalendarPage';
+import { CalendarPage } from './calendar/CalendarPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './components/RootLayout';
 import ErrorPage from './components/ErrorPage';
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       {index: true, element: <LandingPage />},
       {path: '/calendar', 
       children: [
-        {index: true, element: <CalendarPage />, loader: calendarsLoader},
+        {index: true, element: <CalendarPage />},
         {path: ':calendarId', element: <CalendarDetails />, loader: calendarLoader},
       ]
       },

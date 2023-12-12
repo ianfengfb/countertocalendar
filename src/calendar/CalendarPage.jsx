@@ -1,9 +1,19 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CalendarPage () {
 
-    const data = useLoaderData();
-    const calendars = data.data;
+    const calendars = [
+        {
+            id: 1,
+            name: 'Calendar 1',
+            description: 'This is calendar 1'
+        },
+        {
+            id: 2,
+            name: 'Calendar 2',
+            description: 'This is calendar 2'
+        }
+    ];
     return (
         <>
             <div className="container">
@@ -25,13 +35,3 @@ function CalendarPage () {
 }
 
 export {CalendarPage};
-
-export async function loader() {
-    const response = await fetch('http://127.0.0.1:8000/api/calendar');
-  
-    if (!response.ok) {
-        return {isError: true, message: 'An error occurs.'}
-    } else {
-        return response;
-    }
-}

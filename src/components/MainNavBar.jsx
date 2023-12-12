@@ -38,6 +38,7 @@ function MainNavBar () {
                 </div>
             </div>
         </nav>
+        
     );
 }
 
